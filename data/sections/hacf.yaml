@@ -1,0 +1,47 @@
+# section information
+section:
+  name: A Propos
+  id: a-propos
+  weight: 1
+  template: sections/hacf.html
+
+image: /images/hacf-a-propos.svg
+
+name: "HACF"
+subtitle: "Communauté Francophone autour de Home Assistant"
+
+summary:
+- description: "***HACF** est née de l'envie de réunir une Communauté Francophone autour de Home Assistant.*"
+- description: "Son **but** est de rendre **visible** et **accessible**, la solution domotique **gratuite** et **open source**, Home Assistant mais aussi de réunir le maximum d'utilisateurs en un seul endroit."
+- description: "Une **association** a été créé toujours dans un but de **transparence** et de **pérennisation**."
+
+button:
+- name: 'En savoir plus'
+  url: a-propos
+- name: 'Association'
+  url: association
+
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "example@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/example"
+
+- name: Stackoverflow
+  icon: "fab fa-stack-overflow"
+  url: "#"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "#"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "#"
+
+- name: Facebook
+  icon: "fab fa-facebook"
+  url: "#"
