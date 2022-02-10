@@ -107,16 +107,44 @@ url = "/protection-des-donnees"
 
 [[menu.social]]
 name = "Email"
-url = "contact@mcflypartages.fr"
-pre = '<i class="bi bi-envelope"></i>'
+url = "contact@hacf.fr"
+pre = 'bi-envelope'
+weight = 1
+[[menu.social]]
+name = "Forum"
+url = "https://forum.hacf.fr"
+pre = 'bi-chat-text-fill'
+weight = 2
+[[menu.social]]
+name = "Discord"
+url = "https://discord.hacf.fr"
+pre = 'bi-discord'
+weight = 3
+[[menu.social]]
+name = "Groupe Facebook"
+url = "https://groupe-facebook.hacf.fr"
+pre = 'bi-messenger'
+weight = 4
 [[menu.social]]
 name = "GitHub"
-url = "https://github.com/McFlyPartages/"
-pre = '<i class="bi bi-github"></i>'
+url = "https://github.hacf.fr"
+pre = 'bi-github'
+weight = 5
 [[menu.social]]
 name = "YouTube"
-url = "https://www.youtube.com/c/McFlyPartages"
-pre = '<i class="bi bi-youtube"></i>'
+url = "https://youtube.hacf.fr"
+pre = 'bi-youtube'
+weight = 6
+[[menu.social]]
+name = "Twitter"
+url = "https://twitter.hacf.fr"
+pre = 'bi-twitter'
+weight = 7
+[[menu.social]]
+name = "Facebook"
+url = "https://facebook.hacf.fr"
+pre = 'bi-facebook'
+weight = 8
 
 
 
