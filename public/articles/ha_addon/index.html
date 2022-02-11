@@ -1,0 +1,391 @@
+<!doctype html><html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>HACF</title>
+<meta name=keywords content="add-on,extension,plugin,haos,store officielle,externe">
+<meta name=description content="Comment ajouter un add-on (plugin ou extension) sur Home Assistant via le store officiel et via un dépôt externe.">
+<meta name=author content="HACF">
+<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3 crossorigin=anonymous>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css>
+<script src=https://kit.fontawesome.com/e909a4f6c7.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js integrity=sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p crossorigin=anonymous></script>
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDoNotTrack",!0]),_paq.push(["disableCookies"]),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="//ynh.mcflypartages.fr/matomo/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','2']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
+<noscript><p><img src="//ynh.mcflypartages.fr/matomo/matomo.php?idsite=2&rec=1" style=border:0 alt></p></noscript>
+<body><header class=sticky-top>
+<nav class="navbar navbar-expand-sm border-bottom bg-light" aria-label="Third navbar example">
+<div class=container>
+<a href=https://hacf.fr class="d-flex align-items-center text-dark text-decoration-none">
+<img src=/images/logo.webp width=30 height=30 class="d-inline-block align-top" alt=HACF-logo title=HACF-logo>
+<span class="fs-4 m-1">HACF</span>
+</a>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarsExample03 aria-controls=navbarsExample03 aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id=navbarsExample03>
+<ul class="nav nav-pills">
+<li class=nav-item><a href=/a-propos class=nav-link aria-current=page>HACF</a></li>
+<li class=nav-item><a href=/association class=nav-link aria-current=page>Association</a></li>
+<li class=nav-item><a href=/news class=nav-link aria-current=page>News</a></li>
+<li class=nav-item><a href=/articles class=nav-link aria-current=page>Articles</a></li>
+<li class=nav-item><a href=/awesome class=nav-link aria-current=page>Awesome</a></li>
+<li class=nav-item><a href=/guide-dev class=nav-link aria-current=page>Guide du Dev</a></li>
+<li class=nav-item><a href=/home-assistant class=nav-link aria-current=page>Home Assistant</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</header> <div id=content>
+<section class="bg-light py-5 mt-2 mb-5">
+<div class=container>
+<div class="row row align-items-center">
+<div class=col-8>
+<h1 class="mt-3 text-secondary">Installer un add-on officiel ou non officiel sur Home Assistant</h1>
+</div>
+</div>
+</div>
+</section>
+<section class=container>
+<div class=row>
+<article class="row justify-content-center">
+<div class="col-10 col-xl-8">
+<div>
+<p>Les add-ons permettent d’ajouter des fonctions, services ou autres à votre Home Assistant. Des services très connus et reconnus (comme Node-Red, Grafana, InfluxDB, DuckDNS, etc.) sont déjà presque configuré pour communiquer simplement avec votre système domotique.</p>
+<p>Il existe deux types d’extensions :</p>
+<ul>
+<li>Les officielles : reconnues officiellement par Home Assistant,</li>
+<li>Les non-officielles : nécessitant l&rsquo;ajout du dépôt GitHub en manuel.</li>
+</ul>
+<p>L&rsquo;installation des extensions étant toujours la même, voici les différentes méthodes.</p>
+<div class="alert alert-info" role=alert>
+<i class="bi bi-info-circle"></i> Home assistant a simplifié la chose en mettant à disposition des développeurs un script générant un bouton (pour les BluePrint, Dépots, etc) qui, d&rsquo;un simple clique, fait les actions à votre place. Cela nécessite simplement de saisir l&rsquo;adresse de votre instance. <img src=img/repository_import.svg alt="Bouton Import Dépôt">, <img src=img/blueprint_import.svg alt="Bouton Import BluePrint">
+</div>
+<h2 class="fst-italic text-primary p-3 p-lg-5">Extension Officielle.</h2>
+<p>Pour les extensions officielles, il n&rsquo;y a rien de compliqué.</p>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js></script>
+<div class="row justify-content-center">
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutAddonOff/00_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutAddonOff/00_ajout_nouveau_depot_hue9da916cd9e3f823d5b30e26dd147c47_85562_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutAddonOff/00_ajout_nouveau_depot_hue9da916cd9e3f823d5b30e26dd147c47_85562_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutAddonOff/00_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutAddonOff/01_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutAddonOff/01_ajout_nouveau_depot_hu417e77a4067160d15e98a33bf13d2c4c_52556_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutAddonOff/01_ajout_nouveau_depot_hu417e77a4067160d15e98a33bf13d2c4c_52556_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutAddonOff/01_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutAddonOff/02_boutique_modules_complementaires.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutAddonOff/02_boutique_modules_complementaires_hue5f7057b3c483156957ddd19e2a4bbe4_97670_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutAddonOff/02_boutique_modules_complementaires_hue5f7057b3c483156957ddd19e2a4bbe4_97670_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutAddonOff/02_boutique_modules_complementaires.png>
+</picture>
+</a>
+</div>
+</div>
+<p>Dans Home Assistant, cliquer sur <code>Configuration</code>-> <code>Modules complémentaires, Sauvegardes et Superviseur</code> -> <code>Boutique des modules complémentaires</code>.</p>
+<ul>
+<li>Rechercher l&rsquo;add-on,</li>
+<li>Cliquer dessus,</li>
+<li>Puis <code>INSTALLER</code>
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_addon/img/addon_duck_dns.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_addon/img/addon_duck_dns_hube30c6885765ba3ff7594adcd650d0e2_80140_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="Exemple d&rsquo;add-on avec DuckDNS" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div></li>
+</ul>
+<p>Les add-ons sont quasiment tous fait pareil.
+Une fois installé vous avez quatre onglets en haut.</p>
+<ul>
+<li><strong>Info</strong> : Permet de contrôler l&rsquo;add-on et donne une description.</li>
+<li><strong>Documentation</strong> : Explique son fonctionnement et ses réglages possibles.</li>
+<li><strong>Configuration</strong> : Permet de configurer l&rsquo;add-on,</li>
+<li><strong>Journal</strong> : Vous donne les logs sur le fonctionnement de l&rsquo;add-on.</li>
+</ul>
+<p>Un exemple en image avec l&rsquo;add-on DuckDNS.
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js></script>
+<div class="row justify-content-center">
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/addonDuckDns/00_addon_info.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/addonDuckDns/00_addon_info_hu884ace20b7c157b421cfecd1e0bf2a9d_111008_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/addonDuckDns/00_addon_info_hu884ace20b7c157b421cfecd1e0bf2a9d_111008_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/addonDuckDns/00_addon_info.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/addonDuckDns/01_addon_documentation.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/addonDuckDns/01_addon_documentation_huf67e8747614eb3edd2138e4f95ffc8eb_126208_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/addonDuckDns/01_addon_documentation_huf67e8747614eb3edd2138e4f95ffc8eb_126208_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/addonDuckDns/01_addon_documentation.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/addonDuckDns/02_addon_configuration.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/addonDuckDns/02_addon_configuration_hu6553d1d914fb542fe869ec046cf885b6_31710_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/addonDuckDns/02_addon_configuration_hu6553d1d914fb542fe869ec046cf885b6_31710_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/addonDuckDns/02_addon_configuration.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/addonDuckDns/04_addon_journal.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/addonDuckDns/04_addon_journal_hu711544bd0060315de4257f6950703662_48935_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/addonDuckDns/04_addon_journal_hu711544bd0060315de4257f6950703662_48935_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/addonDuckDns/04_addon_journal.png>
+</picture>
+</a>
+</div>
+</div>
+</p>
+<h2 class="fst-italic text-primary p-3 p-lg-5">Extension non officielle.</h2>
+<p>Les extensions non officielles permettent aux développeurs de mettre à disposition leur travail sans forcément attendre une validation officielle.
+Cela permet de rendre Home Assistant encore plus extensible.</p>
+<p>Pour ajouter un add-on non officiel il va falloir ajouter un nouveau dépôt dans la boutique des modules complémentaires.</p>
+<p>Dans Home Assistant, cliquer sur <code>Configuration</code>-> <code>Modules complémentaires, Sauvegardes et Superviseur</code> -> <code>Boutique des modules complémentaires</code> -><code>...</code> en haut à droite-> <code>Dépôts</code>.</p>
+<ul>
+<li>Ajouter le lien du dépôt,</li>
+<li>Rafraichir la page via <code>F5</code> ou via <code>Rechercher des mises a jour</code> dans les <code>...</code> en haut à droite.</li>
+<li>Chercher maintenant l&rsquo;add-on voulu et <code>INSTALLER</code>.</li>
+</ul>
+<div class="alert alert-info" role=alert>
+<i class="bi bi-info-circle"></i> Le fonctionnement est identique à un add-on officiel.
+</div>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js></script>
+<div class="row justify-content-center">
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/00_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/00_ajout_nouveau_depot_hue9da916cd9e3f823d5b30e26dd147c47_85562_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/00_ajout_nouveau_depot_hue9da916cd9e3f823d5b30e26dd147c47_85562_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/00_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/01_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/01_ajout_nouveau_depot_hu417e77a4067160d15e98a33bf13d2c4c_52556_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/01_ajout_nouveau_depot_hu417e77a4067160d15e98a33bf13d2c4c_52556_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/01_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/02_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/02_ajout_nouveau_depot_hu42a6d67a0e76bef149ad3111190200de_122526_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/02_ajout_nouveau_depot_hu42a6d67a0e76bef149ad3111190200de_122526_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/02_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/03_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/03_ajout_nouveau_depot_huf58dfe91393ccb920cdbad17874dc972_22843_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/03_ajout_nouveau_depot_huf58dfe91393ccb920cdbad17874dc972_22843_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/03_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/04_ajout_nouveau_depot.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/04_ajout_nouveau_depot_hu592d99f8deb942fe22ff9a618c8b89ec_35897_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/04_ajout_nouveau_depot_hu592d99f8deb942fe22ff9a618c8b89ec_35897_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/04_ajout_nouveau_depot.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/05_addon_haos_i2c_configurator.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/05_addon_haos_i2c_configurator_huf2b775b9009b00fe972de964bb07299b_49051_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/05_addon_haos_i2c_configurator_huf2b775b9009b00fe972de964bb07299b_49051_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_addon/ajoutNouveauDepot/05_addon_haos_i2c_configurator.png>
+</picture>
+</a>
+</div>
+</div>
+<h2 class="fst-italic text-primary p-3 p-lg-5">Conclusion</h2>
+<p>Nous venons de mettre à disposition de notre instance une multitude de possibilités.</p>
+<p>Nous verrons par la suite quelques add-ons indispensables.</p>
+<a type=button class="btn btn-outline-primary" href=https://forum.hacf.fr/t/comment-installer-un-add-on-officiel-et-non-officiel/2071 title="Comment installer un add-on officiel et non officiel" target=_blank>
+<img src=/images/hacf.png alt="Liens vers l'article HACF"> Comment installer un add-on officiel et non officiel
+</a>
+</div>
+</div>
+<div class="col-xl-3 d-none d-xl-block">
+<div>
+<h3 class=text-center>Sommaire</h3>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#extension-officielle>Extension Officielle.</a></li>
+<li><a href=#extension-non-officielle>Extension non officielle.</a></li>
+<li><a href=#conclusion>Conclusion</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class=bg-light>
+<div class=container>
+<div class="row justify-content-evenly p-3">
+<div class="col-6 text-center">
+<h5>Partager</h5>
+<br>
+<ul class=list-inline>
+<li class=list-inline-item>
+<a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&url=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f&text=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant" target=_blank rel=noreferrer alt="Partager sur Twitter">
+<i class="bi bi-twitter"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f" target=_blank rel=noreferrer alt="Partager sur Facebook">
+<i class="bi bi-facebook"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://api.whatsapp.com/send?text=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant%2c%20par%20HACF%0aComment%20ajouter%20un%20add-on%20%28plugin%20ou%20extension%29%20sur%20Home%20Assistant%20via%20le%20store%20officiel%20et%20via%20un%20d%c3%a9p%c3%b4t%20externe.%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f%0a" target=_blank rel=noreferrer alt="Partager via WhatApp">
+<i class="bi bi-whatsapp"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://telegram.me/share/url?text=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant%2c%20par%20HACF%0aComment%20ajouter%20un%20add-on%20%28plugin%20ou%20extension%29%20sur%20Home%20Assistant%20via%20le%20store%20officiel%20et%20via%20un%20d%c3%a9p%c3%b4t%20externe.%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f%0a&url=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f" target=_blank rel=noreferrer alt="Partager via Telegram">
+<i class="bi bi-telegram"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="mailto:?subject=HACF - Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant.&body=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant%2c%20par%20HACF%0aComment%20ajouter%20un%20add-on%20%28plugin%20ou%20extension%29%20sur%20Home%20Assistant%20via%20le%20store%20officiel%20et%20via%20un%20d%c3%a9p%c3%b4t%20externe.%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f%0a" target=_blank rel=noreferrer alt="Partager par Email">
+<i class="bi bi-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 text-center">
+<h5>Participer</h5><br>
+<a class=text-decoration-none href=https://github.com/McFlyPartages/hacf-blog/edit/testing/content/articles/ha_addon/index.md title="Corriger/Modifier cette page" target=_blank rel=noopener>
+<i class="bi bi-git"></i>
+Modifier cette page
+</a>
+</div>
+<div class="col-12 border-top border-secondary pt-3">
+<a class=text-decoration-none href="mailto:contact@mcflypartages.fr?subject=Problème avec l'article 'Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant'&body=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f" title="Signaler un problème par E-mail"><p class=text-center><i class="bi bi-envelope"></i> Problème avec l'article <i class="bi bi-envelope"></i></p></a>
+</div>
+<div class="row justify-content-center border-top border-secondary pt-2">
+</div>
+</div>
+</div>
+</section>
+</div><footer class=bg-light>
+<div class=container>
+<div class="row pt-3">
+<div class="col-12 col-md-6 text-center">
+<div class=row>
+<div class="col-12 text-center">
+<h5>Faites-nous connaitre.</h5>
+<br>
+<ul class=list-inline>
+<li class=list-inline-item>
+<a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&url=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f&text=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant" target=_blank rel=noreferrer alt="Partager sur Twitter" title="Partager sur Twitter">
+<i class="bi bi-twitter fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f" target=_blank rel=noreferrer alt="Partager sur Facebook" title="Partager sur Facebook">
+<i class="bi bi-facebook fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://api.whatsapp.com/send?text=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant%2c%20par%20HACF%0aComment%20ajouter%20un%20add-on%20%28plugin%20ou%20extension%29%20sur%20Home%20Assistant%20via%20le%20store%20officiel%20et%20via%20un%20d%c3%a9p%c3%b4t%20externe.%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f%0a" target=_blank rel=noreferrer alt="Partager via WhatApp" title="Partager via WhatApp">
+<i class="bi bi-whatsapp fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://telegram.me/share/url?text=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant%2c%20par%20HACF%0aComment%20ajouter%20un%20add-on%20%28plugin%20ou%20extension%29%20sur%20Home%20Assistant%20via%20le%20store%20officiel%20et%20via%20un%20d%c3%a9p%c3%b4t%20externe.%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f%0a&url=https%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f" target=_blank rel=noreferrer alt="Partager via Telegram" title="Partager via Telegram">
+<i class="bi bi-telegram fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="mailto:?subject=HACF - Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant.&body=Installer%20un%20add-on%20officiel%20ou%20non%20officiel%20sur%20Home%20Assistant%2c%20par%20HACF%0aComment%20ajouter%20un%20add-on%20%28plugin%20ou%20extension%29%20sur%20Home%20Assistant%20via%20le%20store%20officiel%20et%20via%20un%20d%c3%a9p%c3%b4t%20externe.%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_addon%2f%0a" target=_blank rel=noreferrer alt="Partager par Email" title="Partager par Email">
+<i class="bi bi-envelope fa-2x"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 text-center">
+<h5>Nos Médias</h5>
+<br>
+<ul class=list-inline>
+<li class=list-inline-item>
+<a href=mailto:contact@hacf.fr target=_blank rel=noreferrer alt=Email title=contact@hacf.fr>
+<i class="bi bi-envelope fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://forum.hacf.fr target=_blank rel=noreferrer alt=Forum title=https://forum.hacf.fr>
+<i class="bi bi-chat-text-fill fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://discord.hacf.fr target=_blank rel=noreferrer alt=Discord title=https://discord.hacf.fr>
+<i class="bi bi-discord fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://groupe-facebook.hacf.fr target=_blank rel=noreferrer alt="Groupe Facebook" title=https://groupe-facebook.hacf.fr>
+<i class="bi bi-messenger fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://github.hacf.fr target=_blank rel=noreferrer alt=GitHub title=https://github.hacf.fr>
+<i class="bi bi-github fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://youtube.hacf.fr target=_blank rel=noreferrer alt=YouTube title=https://youtube.hacf.fr>
+<i class="bi bi-youtube fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://twitter.hacf.fr target=_blank rel=noreferrer alt=Twitter title=https://twitter.hacf.fr>
+<i class="bi bi-twitter fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://facebook.hacf.fr target=_blank rel=noreferrer alt=Facebook title=https://facebook.hacf.fr>
+<i class="bi bi-facebook fa-2x"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<ul class="nav justify-content-end">
+<li class=nav-item><a href=/a-propos class="nav-link px-2 text-muted">A propos</a></li>
+<li class=nav-item><a href=/protection-des-donnees class="nav-link px-2 text-muted">Protection des données</a></li>
+</ul>
+</div>
+<div class="row align-items-center p-0 m-0">
+<div class="col text-center align-self-center p-2">
+<p>Site web réalisé avec <a href=https://gohugo.io/ alt="Hugo LE générateur de site statique." target=_blank><img alt=hugo-logo src=/images/hugo-logo.svg width=auto height=15px></a> et auto-hebergé via <a href=https://yunohost.org/>YunoHost</a>. Contenus sous licence <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/ alt="Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International" target=_blank><img alt="Licence Creative Commons 4.0 by-nc-sa" src=https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png></a>
+</div>
+</div>
+</footer>
+</body>
+</html>

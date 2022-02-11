@@ -1,0 +1,347 @@
+<!doctype html><html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>HACF</title>
+<meta name=keywords content="Argon,Argon One Add-on,HassOS I2C Configurator,add-on ha">
+<meta name=description content="Ajouter et commander son boitier Argon One M.2 avec Home Assistant">
+<meta name=author content="HACF">
+<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3 crossorigin=anonymous>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css>
+<script src=https://kit.fontawesome.com/e909a4f6c7.js crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js integrity=sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p crossorigin=anonymous></script>
+<script>var _paq=window._paq=window._paq||[];_paq.push(["setDoNotTrack",!0]),_paq.push(["disableCookies"]),_paq.push(['trackPageView']),_paq.push(['enableLinkTracking']),function(){var b="//ynh.mcflypartages.fr/matomo/",c,a,d;_paq.push(['setTrackerUrl',b+'matomo.php']),_paq.push(['setSiteId','2']),c=document,a=c.createElement('script'),d=c.getElementsByTagName('script')[0],a.async=!0,a.src=b+'matomo.js',d.parentNode.insertBefore(a,d)}()</script>
+<noscript><p><img src="//ynh.mcflypartages.fr/matomo/matomo.php?idsite=2&rec=1" style=border:0 alt></p></noscript>
+<body><header class=sticky-top>
+<nav class="navbar navbar-expand-sm border-bottom bg-light" aria-label="Third navbar example">
+<div class=container>
+<a href=https://hacf.fr class="d-flex align-items-center text-dark text-decoration-none">
+<img src=/images/logo.webp width=30 height=30 class="d-inline-block align-top" alt=HACF-logo title=HACF-logo>
+<span class="fs-4 m-1">HACF</span>
+</a>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarsExample03 aria-controls=navbarsExample03 aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id=navbarsExample03>
+<ul class="nav nav-pills">
+<li class=nav-item><a href=/a-propos class=nav-link aria-current=page>HACF</a></li>
+<li class=nav-item><a href=/association class=nav-link aria-current=page>Association</a></li>
+<li class=nav-item><a href=/news class=nav-link aria-current=page>News</a></li>
+<li class=nav-item><a href=/articles class=nav-link aria-current=page>Articles</a></li>
+<li class=nav-item><a href=/awesome class=nav-link aria-current=page>Awesome</a></li>
+<li class=nav-item><a href=/guide-dev class=nav-link aria-current=page>Guide du Dev</a></li>
+<li class=nav-item><a href=/home-assistant class=nav-link aria-current=page>Home Assistant</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</header> <div id=content>
+<section class="bg-light py-5 mt-2 mb-5">
+<div class=container>
+<div class="row row align-items-center">
+<div class=col-8>
+<h1 class="mt-3 text-secondary">Installer le boitier Argon One sur Home Assistant et le controler</h1>
+</div>
+</div>
+</div>
+</section>
+<section class=container>
+<div class=row>
+<article class="row justify-content-center">
+<div class="col-10 col-xl-8">
+<div>
+<p><div class="alert alert-success" role=alert>
+<i class="bi bi-check-circle"></i> Message <strong>danger</strong>
+</div>
+<figure class="alert alert-secondary" role=alert>
+<blockquote class=blockquote>
+<p>Message <strong>citation</strong></p>
+</blockquote>
+<figcaption class=blockquote-footer>
+<cite title="Source Title">artiste <strong>anonyme</strong></cite>
+</figcaption>
+</figure>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js></script>
+</p>
+<p>Pré requis :</p>
+<ul>
+<li>Boitier Argon One ou Argone ONE extension</li>
+<li><a href=./../ha_installation_supervised_raspberry/#activer-les-param%c3%a8tres-avanc%c3%a9s title=./../ha_installation_supervised_raspberry/#activer-les-paramètres-avancés target=_blank rel=noreferrer>Activer mode Avancé</a> (pour installer l&rsquo;add-on Terminal & SSH)</li>
+</ul>
+<h3 class="fst-italic text-primary p-3 p-lg-5">Activer l&rsquo;I2C</h3>
+<p>@adamoutioer nous a concocter un add-on simplifiant grandement l&rsquo;activation de la liason I2C, nommé HAOS i2C Configurator. Il est disponnible a partir d'[un dépot externe](#URL ARTICLE ADDON).</p>
+<p>
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/addon_haos_i2c_configurator_hu99d18c0532a9f99ef6e940e325e8187d_12187_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="Add-on HAOS i2C Configurator" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div></p>
+<ul>
+<li>Ajouter le dépot externe via l&rsquo;image ci-dessous ou manuellement. Adresse du dépot <a href=https://github.com/adamoutler/HassOSConfigurator title=https://github.com/adamoutler/HassOSConfigurator target=_blank rel=noreferrer>https://github.com/adamoutler/HassOSConfigurator</a>
+LIENS HA AJOUT DEPOT</li>
+<li>Recharger les dépots ou faites <code>F5</code>,</li>
+<li>Installer l&rsquo;add-on HAOS i2C Configurator,</li>
+<li>Cliquer sur <code>DEMARRER</code>.</li>
+<li>Verifier les logs de l&rsquo;add-on et du supervisor.
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js></script>
+<div class="row justify-content-center">
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/01_log_demarrage_i2c_configrator.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/01_log_demarrage_i2c_configrator_hu87fb936f1e3dcf1265a629adc4310bf4_40295_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/01_log_demarrage_i2c_configrator_hu87fb936f1e3dcf1265a629adc4310bf4_40295_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/01_log_demarrage_i2c_configrator.png>
+</picture>
+</a>
+</div>
+<div class="col col-lg-4 py-1 align-self-center">
+<a href=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/02_log_supervisor_haos_i2c_configurator.png data-lightbox=x>
+<picture>
+<source srcset=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/02_log_supervisor_haos_i2c_configurator_hue55a647af80e59d2f6588650cae72d39_110203_200x0_resize_q50_h2_box_3.webp type=image/webp>
+<img src=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/02_log_supervisor_haos_i2c_configurator_hue55a647af80e59d2f6588650cae72d39_110203_200x0_resize_q100_bgffffff_box_3.jpg type=image/jpg alt=https://hacf.fr/articles/ha_ajouter_boitier_argon/log1/02_log_supervisor_haos_i2c_configurator.png>
+</picture>
+</a>
+</div>
+</div>
+</li>
+<li>Redémarrer deux fois l&rsquo;hote.
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/log_addon_apres_redemarrage_huf22dafc25665435a88187d31ebc220c9_22326_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="Log de l&rsquo;add-on apres" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div></li>
+<li>Vérifier la présence d&rsquo;I2C dans la liste de matériel <code>Configuration</code>-> <code>Modules complémentaires, Sauvegardes et Superviseur</code> -> Onglet <code>Système</code> -> Fenetre <code>Host</code> <code>...</code> en bas à droite-> <code>Matériel</code>.
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/liste_materiel_i2c_hu923b1268502d14a4d19a6ae5bcbda4b2_6118_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="Présence I2C dans la liste des matériel" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div></li>
+</ul>
+<p>Vous pouvez redemarer l&rsquo;add-on pour confirmer.
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/log_relance_addon_i2c_configurator_hu54caaf9794fba9d2227111784babcee0_12822_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="Confirmer via l&rsquo;add-on" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div></p>
+<p>Il faut ajouter un nouveau <code>repositories</code> puis installer l&rsquo;add-on.</p>
+<p>Dans Home Assistant, cliquer sur <code>Configuration</code>-> <code>Modules complémentaires, Sauvegardes et Superviseur</code> -> <code>Boutique des modules complémentaires</code> -><code>...</code> en haut à droite-> <code>Dépots</code>.
+Ajouter ce <code>repositories</code>.</p>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js></script>
+<p>Puis installer l&rsquo;add-on <strong>HassOS I2C Configurator</strong></p>
+<p>Il n' y a pas de configuration juste le besoin de désactiver le <code>Protection Mode</code></p>
+<p>
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/haos_i2c_confgurator_parametre_hu6ac6a023edba82a32aa942bb4aa25ac1_91546_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="I2C Configurator" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div>
+<div class="row text-center">
+<figure class="col border border-light text-center p-2">
+<a href=/articles/ha_ajouter_boitier_argon/img/mode_protection_alerte.png>
+<picture class=justify-align-center>
+<source sizes=" (min-width: 576px) 55vw ,(min-width: 768px) 80vw , (min-width: 1200px) 40vw , (min-width: 1400px) 30vw ,80vw" srcset="/articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_320x0_resize_q100_h1_box_3.webp 320w, /articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_450x0_resize_q100_h1_box_3.webp 450w, /articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_600x0_resize_q100_h1_box_3.webp 600w, /articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_750x0_resize_q100_h1_box_3.webp 750w" type=image/webp>
+<img src="/articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_320x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_450x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_600x0_resize_q100_bgffffff_box_3.jpg, /articles/ha_ajouter_boitier_argon/img/mode_protection_alerte_hu672ffd671c321209e10283a5e52a3869_34850_750x0_resize_q100_bgffffff_box_3.jpg" type=image/jpg alt="Alerte Protection Mode" style=max-width:700px;max-height:300px>
+</picture>
+</a>
+</figure>
+</div></p>
+<h3 class="fst-italic text-primary p-3 p-lg-5">Sources</h3>
+<p><a href=https://community.home-assistant.io/t/argon-one-active-cooling-addon/262598 title=https://community.home-assistant.io/t/argon-one-active-cooling-addon/262598 target=_blank rel=noreferrer>Argon One Add-on</a>
+<a href=https://community.home-assistant.io/t/add-on-hassos-i2c-configurator/264167 title=https://community.home-assistant.io/t/add-on-hassos-i2c-configurator/264167 target=_blank rel=noreferrer>Sujet HA Off addon Hassos I2C Configurator</a>
+<a href=https://github.com/adamoutler/HassOSConfigurator title=https://github.com/adamoutler/HassOSConfigurator target=_blank rel=noreferrer>GitHub Hassos I2C Configurator</a></p>
+</div>
+</div>
+<div class="col-xl-3 d-none d-xl-block">
+<div>
+<h3 class=text-center>Sommaire</h3>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#activer-li2c>Activer l&rsquo;I2C</a></li>
+<li><a href=#sources>Sources</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class=bg-light>
+<div class=container>
+<div class="row justify-content-evenly p-3">
+<div class="col-6 text-center">
+<h5>Partager</h5>
+<br>
+<ul class=list-inline>
+<li class=list-inline-item>
+<a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&url=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f&text=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler" target=_blank rel=noreferrer alt="Partager sur Twitter">
+<i class="bi bi-twitter"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f" target=_blank rel=noreferrer alt="Partager sur Facebook">
+<i class="bi bi-facebook"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://api.whatsapp.com/send?text=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler%2c%20par%20HACF%0aAjouter%20et%20commander%20son%20boitier%20Argon%20One%20M.2%20avec%20Home%20Assistant%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f%0a" target=_blank rel=noreferrer alt="Partager via WhatApp">
+<i class="bi bi-whatsapp"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://telegram.me/share/url?text=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler%2c%20par%20HACF%0aAjouter%20et%20commander%20son%20boitier%20Argon%20One%20M.2%20avec%20Home%20Assistant%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f%0a&url=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f" target=_blank rel=noreferrer alt="Partager via Telegram">
+<i class="bi bi-telegram"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="mailto:?subject=HACF - Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler.&body=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler%2c%20par%20HACF%0aAjouter%20et%20commander%20son%20boitier%20Argon%20One%20M.2%20avec%20Home%20Assistant%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f%0a" target=_blank rel=noreferrer alt="Partager par Email">
+<i class="bi bi-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 text-center">
+<h5>Participer</h5><br>
+<a class=text-decoration-none href=https://github.com/McFlyPartages/hacf-blog/edit/testing/content/articles/ha_ajouter_boitier_argon/index.md title="Corriger/Modifier cette page" target=_blank rel=noopener>
+<i class="bi bi-git"></i>
+Modifier cette page
+</a>
+</div>
+<div class="col-12 border-top border-secondary pt-3">
+<a class=text-decoration-none href="mailto:contact@mcflypartages.fr?subject=Problème avec l'article 'Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler'&body=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f" title="Signaler un problème par E-mail"><p class=text-center><i class="bi bi-envelope"></i> Problème avec l'article <i class="bi bi-envelope"></i></p></a>
+</div>
+<div class="row justify-content-center border-top border-secondary pt-2">
+</div>
+</div>
+</div>
+</section>
+</div><footer class=bg-light>
+<div class=container>
+<div class="row pt-3">
+<div class="col-12 col-md-6 text-center">
+<div class=row>
+<div class="col-12 text-center">
+<h5>Faites-nous connaitre.</h5>
+<br>
+<ul class=list-inline>
+<li class=list-inline-item>
+<a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&url=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f&text=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler" target=_blank rel=noreferrer alt="Partager sur Twitter" title="Partager sur Twitter">
+<i class="bi bi-twitter fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f" target=_blank rel=noreferrer alt="Partager sur Facebook" title="Partager sur Facebook">
+<i class="bi bi-facebook fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://api.whatsapp.com/send?text=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler%2c%20par%20HACF%0aAjouter%20et%20commander%20son%20boitier%20Argon%20One%20M.2%20avec%20Home%20Assistant%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f%0a" target=_blank rel=noreferrer alt="Partager via WhatApp" title="Partager via WhatApp">
+<i class="bi bi-whatsapp fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="https://telegram.me/share/url?text=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler%2c%20par%20HACF%0aAjouter%20et%20commander%20son%20boitier%20Argon%20One%20M.2%20avec%20Home%20Assistant%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f%0a&url=https%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f" target=_blank rel=noreferrer alt="Partager via Telegram" title="Partager via Telegram">
+<i class="bi bi-telegram fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href="mailto:?subject=HACF - Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler.&body=Installer%20le%20boitier%20Argon%20One%20sur%20Home%20Assistant%20et%20le%20controler%2c%20par%20HACF%0aAjouter%20et%20commander%20son%20boitier%20Argon%20One%20M.2%20avec%20Home%20Assistant%0a%0ahttps%3a%2f%2fhacf.fr%2farticles%2fha_ajouter_boitier_argon%2f%0a" target=_blank rel=noreferrer alt="Partager par Email" title="Partager par Email">
+<i class="bi bi-envelope fa-2x"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 text-center">
+<h5>Nos Médias</h5>
+<br>
+<ul class=list-inline>
+<li class=list-inline-item>
+<a href=mailto:contact@hacf.fr target=_blank rel=noreferrer alt=Email title=contact@hacf.fr>
+<i class="bi bi-envelope fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://forum.hacf.fr target=_blank rel=noreferrer alt=Forum title=https://forum.hacf.fr>
+<i class="bi bi-chat-text-fill fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://discord.hacf.fr target=_blank rel=noreferrer alt=Discord title=https://discord.hacf.fr>
+<i class="bi bi-discord fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://groupe-facebook.hacf.fr target=_blank rel=noreferrer alt="Groupe Facebook" title=https://groupe-facebook.hacf.fr>
+<i class="bi bi-messenger fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://github.hacf.fr target=_blank rel=noreferrer alt=GitHub title=https://github.hacf.fr>
+<i class="bi bi-github fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://youtube.hacf.fr target=_blank rel=noreferrer alt=YouTube title=https://youtube.hacf.fr>
+<i class="bi bi-youtube fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://twitter.hacf.fr target=_blank rel=noreferrer alt=Twitter title=https://twitter.hacf.fr>
+<i class="bi bi-twitter fa-2x"></i>
+</a>
+</li>
+<li class=list-inline-item>
+<a href=https://facebook.hacf.fr target=_blank rel=noreferrer alt=Facebook title=https://facebook.hacf.fr>
+<i class="bi bi-facebook fa-2x"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<ul class="nav justify-content-end">
+<li class=nav-item><a href=/a-propos class="nav-link px-2 text-muted">A propos</a></li>
+<li class=nav-item><a href=/protection-des-donnees class="nav-link px-2 text-muted">Protection des données</a></li>
+</ul>
+</div>
+<div class="row align-items-center p-0 m-0">
+<div class="col text-center align-self-center p-2">
+<p>Site web réalisé avec <a href=https://gohugo.io/ alt="Hugo LE générateur de site statique." target=_blank><img alt=hugo-logo src=/images/hugo-logo.svg width=auto height=15px></a> et auto-hebergé via <a href=https://yunohost.org/>YunoHost</a>. Contenus sous licence <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/ alt="Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International" target=_blank><img alt="Licence Creative Commons 4.0 by-nc-sa" src=https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png></a>
+</div>
+</div>
+</footer>
+</body>
+</html>
