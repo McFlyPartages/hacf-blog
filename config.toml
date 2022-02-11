@@ -76,23 +76,27 @@ disableLatLong = true
 [[menu.main]]
   name = "Awesome"
   url = "/awesome"
-  weight = 5
+  weight = 4
 [[menu.main]]
   name = "Guide du Dev"
   url = "/guide-dev"
-  weight = 6
+  weight = 5
 [[menu.main]]
-  name = "News"
-  url = "/news"
+  name = "Contribuer"
+  url = "/contribuer"
   weight = 3
 [[menu.main]]
   name = "Articles"
   url = "/articles"
-  weight = 4
+  weight = 7
+[[menu.main]]
+  name = "News"
+  url = "/news"
+  weight = 6
 [[menu.main]]
   name = "Home Assistant"
   url = "/home-assistant"
-  weight = 7
+  weight = 8
   
 
 
