@@ -7,7 +7,7 @@ version: 2
 updates:
 # Update the git submodules
 - package-ecosystem: "gitsubmodule"
-  directory: "/"
+  directory: "./"
   schedule:
     interval: "daily"
   labels:
