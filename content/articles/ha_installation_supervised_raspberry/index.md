@@ -3,6 +3,7 @@ title: "Installer Home Assistant sur un Raspberry Pi (méthode officielle)"
 date: 2022-01-17T14:14:06+01:00
 lastmod: 
 draft: false
+
 socialshare: true
 article_ha: true
 

@@ -3,7 +3,6 @@ title: "Installer un add-on officiel ou non officiel sur Home Assistant"
 date: 2022-02-02
 lastmod: 
 draft: false
-layout: home-assistant
 #hero: hero-vierge.jpg
 description: "Comment ajouter un add-on (plugin ou extension) sur Home Assistant via le store officiel et via un dépôt externe."
 

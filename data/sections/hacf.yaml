@@ -6,7 +6,7 @@ section:
   template: sections/hacf.html
 
 image: /images/hacf-a-propos.svg
-
+logo: /images/logo.webp
 name: "HACF"
 subtitle: "Communauté Francophone autour de Home Assistant"
 
