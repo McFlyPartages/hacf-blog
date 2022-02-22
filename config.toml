@@ -111,43 +111,43 @@ url = "/protection-des-donnees"
 
 [[menu.social]]
 name = "Email"
-url = "contact@hacf.fr"
-pre = 'bi-envelope'
+url = "contact@a@hacf.fr"
+pre = 'fa-envelope'
 weight = 1
 [[menu.social]]
 name = "Forum"
 url = "https://forum.hacf.fr"
-pre = 'bi-chat-text-fill'
+pre = 'fa-discourse'
 weight = 2
 [[menu.social]]
 name = "Discord"
 url = "https://discord.hacf.fr"
-pre = 'bi-discord'
+pre = 'fa-discord'
 weight = 3
 [[menu.social]]
 name = "Groupe Facebook"
 url = "https://groupe-facebook.hacf.fr"
-pre = 'bi-messenger'
+pre = 'fa-facebook-messenger'
 weight = 4
 [[menu.social]]
 name = "GitHub"
 url = "https://github.hacf.fr"
-pre = 'bi-github'
+pre = 'fa-github'
 weight = 5
 [[menu.social]]
 name = "YouTube"
 url = "https://youtube.hacf.fr"
-pre = 'bi-youtube'
+pre = 'fa-youtube'
 weight = 6
 [[menu.social]]
 name = "Twitter"
 url = "https://twitter.hacf.fr"
-pre = 'bi-twitter'
+pre = 'fa-twitter'
 weight = 7
 [[menu.social]]
 name = "Facebook"
 url = "https://facebook.hacf.fr"
-pre = 'bi-facebook'
+pre = 'fa-facebook'
 weight = 8
 
 
@@ -155,17 +155,17 @@ weight = 8
 [[menu.hacf]]
 name = "Email"
 url = "contact@hacf.fr"
-pre = '<i class="bi bi-envelope"></i>'
+pre = '<i class="fa fa-envelope"></i>'
 weight = 1
 [[menu.hacf]]
 name = "Discourse"
 url = "https://forum.hacf.fr"
-pre = '<i class="bi bi-chat"></i>'
+pre = '<i class="fa fa-discourse"></i>'
 weight = 2
 [[menu.hacf]]
 name = "Discord"
 url = "http://discord.hacf.fr"
-pre = '<i class="bi bi-discord"></i>'
+pre = '<i class="fa-discord"></i>'
 weight = 3
 [[menu.hacf]]
 name = "Github"
