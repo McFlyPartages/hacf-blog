@@ -5,6 +5,8 @@ section:
   template: sections/depots.html
 # section information
 
+title : Les développements de la communauté
+
 # filter buttons
 buttons:
 - name: Tous
