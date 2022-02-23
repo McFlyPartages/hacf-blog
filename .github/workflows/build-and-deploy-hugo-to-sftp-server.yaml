@@ -54,7 +54,7 @@ jobs:
       with:
         switches: -avzr --delete
         path: public-integration/
-        remote_path: /www
+        remote_path: www/
         remote_host: ${{ secrets.SFTP_HOST }}
         remote_user: ${{ secrets.SFTP_USER }}
         remote_key: ${{ secrets.SFTP_SSH_KEY }}
