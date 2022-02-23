@@ -35,16 +35,26 @@ jobs:
     #    publish_branch: main # if your main branch is `master` use that here.
     #    publish_dir: ./public
 
+#    # https://github.com/marketplace/actions/sftp-deploy
+#    - name: Upload file
+#      uses: wlixcc/SFTP-Deploy-Action@v1.0
+#      with:
+#        server: ${{ secrets.SFTP_HOST }}
+#        username: ${{ secrets.SFTP_USER }}
+#        port: ${{ secrets.SFTP_PORT }}
+#        ssh_private_key: ${{ secrets.SFTP_SSH_KEY }} 
+#        local_path: 'public/*'
+#        remote_path: '/www'
 
         
         
-      #  uses: mxschmitt/action-tmate@v2
-      - name: rsync deployments
-        uses: burnett01/rsync-deployments@5.1
-        with:
-          switches: -avzr --delete
-          path: /www
-          remote_path: public/
-          remote_host: ${{ secrets.SFTP_HOST }}
-          remote_user: ${{ secrets.SFTP_USER }}
-          remote_key: ${{ secrets.SFTP_SSH_KEY }} 
+    #  uses: mxschmitt/action-tmate@v2
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.1
+      with:
+        switches: -avzr --delete
+        path: /www
+        remote_path: public/
+        remote_host: ${{ secrets.SFTP_HOST }}
+        remote_user: ${{ secrets.SFTP_USER }}
+        remote_key: ${{ secrets.SFTP_SSH_KEY }} 
