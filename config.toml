@@ -13,11 +13,11 @@ enableInlineShortcodes = true
 enableGitInfo = true
 
 [params]
-  description = "Mémos & Bloc-note pour débutant"
-  keywords = "Domotique, Home Assistant, Linux, Docker, NAS, OpenMediaVault, Vie Privée"
-  logo = "/images/logo.webp"
+  description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
+  keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
+  logo = "/images/hacf/logo-hacf-30px.webp"
   article =  "/images/articles-vierge.webp"
-  contact = "contact@mcflypartages.fr"
+  contact = "contact@a@hacf.fr"
 
   # # Background image du jumbotron
   # background = '/images/site/background-dark.jpg'

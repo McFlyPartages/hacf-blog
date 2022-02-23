@@ -5,8 +5,8 @@ section:
   weight: 1
   template: sections/hacf.html
 
-image: /images/hacf-a-propos.svg
-logo: /images/logo.webp
+#Voir si possibilité d'integrer le resize image.
+#logo: /images/logo-hacf-70px.webp
 name: "HACF"
 subtitle: "Communauté Francophone autour de Home Assistant"
 

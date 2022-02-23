@@ -13,3 +13,6 @@ Blog de l'Association et de Commuanuté Francophone autour de Home Assistant.
 * [] Integrer Matomo
 * [] Cookie et RGPD
   
+
+
+* [ ] Voir si possibilité d'integrer le resize image sur data/section.
