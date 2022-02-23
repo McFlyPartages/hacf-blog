@@ -49,6 +49,7 @@ jobs:
         
         
     #  uses: mxschmitt/action-tmate@v2
+    # https://frigi.ch/en/2021/10/automatically-update-site-created-with-hugo/
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.1
       with:
