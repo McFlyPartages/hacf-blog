@@ -57,4 +57,5 @@ jobs:
         remote_path: public/
         remote_host: ${{ secrets.SFTP_HOST }}
         remote_user: ${{ secrets.SFTP_USER }}
-        remote_key: ${{ secrets.SFTP_SSH_KEY }} 
+        remote_key: ${{ secrets.SFTP_SSH_KEY }}
+        remote_port: ${{ secrets.SFTP_PORT }}
