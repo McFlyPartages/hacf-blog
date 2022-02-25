@@ -1,5 +1,5 @@
 ---
-title: "L'association & le financement"
+title: L'association "Communauté Francophone autour de Home Assistant"
 #layout: "pages"
 #images: ["images/wallpaper-with-media.jpg"]
 
