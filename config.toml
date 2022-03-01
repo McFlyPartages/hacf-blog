@@ -62,8 +62,10 @@ enableGitInfo = true
 
 # Default JPEG or WebP quality setting. Default is 75.
 quality = 100
+hint = "photo"
 disableDate = true
 disableLatLong = true
+
 
 [[menu.main]]
   name = "HACF"
