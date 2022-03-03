@@ -14,7 +14,7 @@ Blog de l'Association et de Commuanuté Francophone autour de Home Assistant.
 * [X] Section HACF
 * [X] Section HAOff
 * [X] Section Historique
-* [ ] Section Developpeurs (voir pour le tri)
+* [ ] Section Developpeurs (voir pour le tri par catégorie en JS)
 * [X] Section Historique
 
 
