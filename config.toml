@@ -18,6 +18,7 @@ enableGitInfo = true
   logo = "/images/logo-hacf-30px.webp"
   article =  "/images/articles-vierge.webp"
   contact = "contact@a@hacf.fr"
+  mainSections = ["articles", "news"]
 
   # Background image du jumbotron
   # background = '/images/site/background-dark.jpg'
@@ -68,37 +69,84 @@ disableLatLong = true
 
 [[menu.main]]
   name = "HACF"
-  url = "/a-propos"
+  identifier = "hacf"
   weight = 1
+  [[menu.main]]
+    name = "A propos"
+    identifier = "propos"
+    parent = "hacf"
+    url = "/a-propos"
+    weight = 1
+  [[menu.main]]
+    name = "Contribuer"
+    identifier = "contribuer"
+    parent = "hacf"
+    url = "/contribuer"
+    weight = 2
+  [[menu.main]]
+    name = "Pourquoi Home Assistant"
+    identifier = "pourquoi"
+    parent = "hacf"
+    url = "/home-assistant"
+    weight = 3
+
 [[menu.main]]
   name = "Association"
-  url = "/association"
+  identifier = "association"
   weight = 2
+  [[menu.main]]
+    name = "Présentation"
+    identifier = "presentation"
+    parent = "association"
+    url = "/association"
+    weight = 1
+  [[menu.main]]
+    name = "Statuts"
+    parent = "association"
+    identifier = "statuts"
+    url = "/asso-statuts"
+    weight = 2
+  [[menu.main]]
+    name = "Règlement"
+    parent = "association"
+    identifier = "reglement"
+    url = "/asso-reglement"
+    weight = 3
+
 [[menu.main]]
-  name = "Awesome"
-  url = "/awesome"
-  weight = 4
-[[menu.main]]
-  name = "Guide du Dev"
-  url = "/guide-dev"
-  weight = 5
-[[menu.main]]
-  name = "Contribuer"
-  url = "/contribuer"
+  name = "Articles / News / Guides"
+  identifier = "sujets"
   weight = 3
+  [[menu.main]]
+    name = "News"
+    identifier = "news"
+    parent = "sujets"
+    url = "/news"
+    weight = 2
+  [[menu.main]]
+    name = "Articles"
+    identifier = "articles"
+    parent = "sujets"
+    url = "/articles"
+    weight = 1
+  [[menu.main]]
+    name = "Awesome"
+    identifier = "awesome"
+    parent = "sujets"
+    url = "/awesome"
+    weight = 4
+  [[menu.main]]
+    name = "Guide du Dev"
+    identifier = "guidedev"
+    parent = "sujets"
+    url = "/guide-dev"
+    weight = 5
 [[menu.main]]
-  name = "Articles"
-  url = "/articles"
-  weight = 7
-[[menu.main]]
-  name = "News"
-  url = "/news"
-  weight = 6
-[[menu.main]]
-  name = "Home Assistant"
-  url = "/home-assistant"
-  weight = 8
-  
+  name = "Contact"
+  identifier = "contact"
+  url = "https://contact.hacf.fr"
+  weight = 4
+
 
 
 [[menu.footer]]

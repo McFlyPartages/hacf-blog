@@ -22,8 +22,8 @@ Blog de l'Association et de Commuanuté Francophone autour de Home Assistant.
 * [X] Page Association
 * [X] Page Home Assistant
 * [X] Page HACF (a-propos)
-* [ ] Page Reglement Association
-* [ ] Page Statut Association
+* [X] Page Reglement Association
+* [X] Page Statut Association
 * [ ] Page Protection des données
-* [ ] Integrer Formulaire de contact (Framaforms)
+* [X] Formulaire de contact (Framaforms)
 * [ ] Page Liens Affiliés

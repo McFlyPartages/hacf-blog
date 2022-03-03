@@ -35,10 +35,10 @@ Le bureau actuel est composé de :
 * **Hugo** (@TheD6Bel) en trésorier et **Antoine** (@Bilbon) en adjoint,
 * **Olivier** (@Pozzi) en secrétaire et **Jean-Baptiste** (@jybi89) en adjoint.
 
-Les statuts sont disponibles [ici**liens**]() et le règlement [ici**liens**](). L'adhésion est de seulement 2 euros.
+Les statuts sont disponibles [ici](/asso-statuts) et le règlement [ici](/asso-reglement). L'adhésion est de seulement 2 euros.
 {{< alert "Sachez qu'une association loi 1901, comme c'est le cas pour la Communauté Francophone autour de Home Assistant ne permet pas de faire de bénéfices ou d'enrichir une quelconque personne.">}}
 
-####### BOUTON ADHESION HELLO ASSO ################
+{{< button "Adhérer à l'**association**" "https://adhesion.hacf.fr">}}
 
 ## Financements.
 Au début de l'aventure, nous avons réfléchis à comment financer la communauté.
@@ -62,7 +62,7 @@ Avantages :
 * Pas de commission, pour vous comme pour nous.
 * Permet de payer directement les prestataires sans passer par un transfert qui peut, lui aussi, amputer de nouveau une partie des dons.
 
-####### BOUTON DON PAYPAL ################
+{{< button "Dons à l'**association** via Paypal" "https://paypal.hacf.fr">}}
 
 #### Hello Asso
 Suite à la création de l'association, nous avons cherché un service pour gérer les adhésions.
@@ -72,7 +72,7 @@ Avantages :
 * Pas de commission, pour vous comme pour nous.
 * Permet de faire un don pendant l'[adhésion](https://www.helloasso.com/associations/hacf-communaute-francophone-autour-de-home-assista/adhesions/membres-actifs) ou alors [indifféremment](https://www.helloasso.com/associations/hacf-communaute-francophone-autour-de-home-assista/formulaires/1/widget).
 
-####### BOUTON DON HELLO ASSO ################
+{{< button "Dons à l'**association** via HelloAsso" "https://dons.hacf.fr">}}
 
 ## Liens affiliés
 Les liens affiliés vous permettent indirectement de nous reverser un pourcentage de votre panier sans incidence sur votre prix.

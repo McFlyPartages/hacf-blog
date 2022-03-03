@@ -16,7 +16,7 @@ Le **but** de cette **communauté** n’est pas d’écraser les autres projets,
 
 C’est ainsi que le **04 juillet 2020**, HACF devient accessible à **tous** les francophones désirant **partager, échanger ou apprendre** sur la solution Home Assistant. **Home Assistant** traîne une image d’une solution pour geeks, barbus et autres passionnés de code et de programmation. Il faut avouer qu’au début l’interface était très technique. Depuis, cela a **beaucoup évolué**. Home Assistant **évolue très souvent**, très **rapidement** et c’est une de ses grandes forces par rapport aux autres solutions domotiques. Aujourd’hui, même pour les débutants, l’interface est très **moderne** et propose beaucoup de fonctionnalités **accessibles** très **simplement**.
 
-Le **but** de cette communauté est de rendre **visible** et **accessible**, la solution domotique **gratuite** et **open source**, Home Assistant au plus grand nombre de francophones et d’être présent sur de multiples supports. C'est dans cet objectif que le **28 février 2021** nous annoncions la V2 du site et l’**union** avec le groupe Facebook [Home Assistant France](https://www.facebook.com/groups/HomeAssistantFrance/), car il n'était pas nécessaire de créer un autre groupe alors nous partageons avec son créateur la même vision.
+Le **but** de cette communauté est de rendre **visible** et **accessible**, la solution domotique **gratuite** et **open source**, Home Assistant au plus grand nombre de francophones et d’être présent sur de multiples supports. C'est dans cet objectif que le **28 février 2021** nous annoncions la V2 du site et l’**union** avec le groupe Facebook [Home Assistant France](https://groupe-facebook.hacf.fr), car il n'était pas nécessaire de créer un autre groupe alors nous partageons avec son créateur la même vision.
 
 Notre de **deuxième objectif**, était de rendre complètement **autonome** et **insensible** au départ ou à l’**abandon** d’un membre de tête cette communauté. C'est pour cela et dans un soucis de transparence et de résilience que nous vous annoncions, le **1 juin 2021**, la **création** de l’association [Communauté Francophone autour de Home Assistant](../association/). Cette association a pour objectifs de gérer l’aspect financier et tout ce qui touche a la gestion, de manière démocratique pour une adhésion de deux euros.
 
@@ -34,9 +34,9 @@ C'est grâce a vos participations que nos médias se remplissent et attirent de 
 
 ### Contribuer.
 
-Financièrement ?? Et non, il n'y a pas que le financier. La contribution peut être en temps, en énergie, en idées. Tout ce qui peut faire avancer la communauté et le bienvenue. Que cela soit pour aider a modérer, a animer nos réseaux sociaux (par exemple), partager des news liées a la domotique ou a Home Assistant, entretenir les tutoriels a jour (oui Home Assistant évolue trop vite) ou encore sûrement d'autre choses qui ne nous viennent pas a l'esprit. Alors n’hésitez pas [contacter nous](URLCONTACT) et proposez vos idées ou votre candidature.
+Financièrement ?? Et non, il n'y a pas que le financier. La contribution peut être en temps, en énergie, en idées. Tout ce qui peut faire avancer la communauté et le bienvenue. Que cela soit pour aider a modérer, a animer nos réseaux sociaux (par exemple), partager des news liées a la domotique ou a Home Assistant, entretenir les tutoriels a jour (oui Home Assistant évolue trop vite) ou encore sûrement d'autre choses qui ne nous viennent pas a l'esprit. Alors n’hésitez pas [contacter nous](https://framaforms.org/contact-hacf-1630416579) et proposez vos idées ou votre candidature.
 
-Bien sur lors de vos achats sur Amazon ou Aliexpress, il est possible de reverser une partie de cet achat (environ 6/7%) à la communauté et cela sans surcoût pour vous. Alors n’hésitez pas (LIEN VERS LE GENERATEUR)
+Bien sur lors de vos achats sur Amazon ou Aliexpress, il est possible de reverser une partie de ces achats (environ 6/7%) à l'association et cela sans surcoût pour vous. Alors n’hésitez pas. (actuellement seul [Discord](https://discord.hacf.fr) vous permet de générer vos liens)
 
 ### Adhérer.
 Et oui vous l'avez compris, c'est l'association qui gère la communauté et donc c'est lors de ses Assemblés Générales, que les décisions seront prises. L’adhésion est de deux euros et vous permet de choisir d’être membre adhérent (sans obligation de participer aux AG) ou membre actif (obligation de participer au AG).
@@ -59,4 +59,4 @@ D’autres choses arriveront encore avec le temps et en fonction de vos suggesti
 
 Il y a encore beaucoup de choses à dire et/ou à faire sur le fonctionnement et nous comptons sur vous.
 
-**AJOUTER SHORTCODE CONTACT**
+{{< button "Formulaire de contct" "https://framaforms.org/contact-hacf-1630416579" >}}

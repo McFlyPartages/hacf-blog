@@ -1,11 +1,12 @@
 ---
 title: "Home Assistant Core Version 2021.9.X"
-date: 2021-09-01
+date: 2022-03-03
+lastmod :
 
 description: Traduction de la mise ajour de Home Assistant en version 2021.9.X
 hacf: "https://forum.hacf.fr/t/mise-a-jour-du-portail-hacf-pas-du-forum/5988/5"
 url_off: "https://www.home-assistant.io/blog/2021/09/01/release-20219/"
-hero: images/hero.svg
+#hero: images/hero.svg
 
 draft: false
 
