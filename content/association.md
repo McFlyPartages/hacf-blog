@@ -38,7 +38,7 @@ Le bureau actuel est composé de :
 Les statuts sont disponibles [ici](/asso-statuts) et le règlement [ici](/asso-reglement). L'adhésion est de seulement 2 euros.
 {{< alert "Sachez qu'une association loi 1901, comme c'est le cas pour la Communauté Francophone autour de Home Assistant ne permet pas de faire de bénéfices ou d'enrichir une quelconque personne.">}}
 
-{{< button "Adhérer à l'**association**" "https://adhesion.hacf.fr">}}
+{{< button "Adhérer à l'**association**" "https://adhesion.hacf.fr" "fa-solid fa-users">}}
 
 ## Financements.
 Au début de l'aventure, nous avons réfléchis à comment financer la communauté.
@@ -62,7 +62,7 @@ Avantages :
 * Pas de commission, pour vous comme pour nous.
 * Permet de payer directement les prestataires sans passer par un transfert qui peut, lui aussi, amputer de nouveau une partie des dons.
 
-{{< button "Dons à l'**association** via Paypal" "https://paypal.hacf.fr">}}
+{{< button "Dons à l'**association** via Paypal" "https://paypal.hacf.fr" "fa-solid fa-euro-sign" >}}
 
 #### Hello Asso
 Suite à la création de l'association, nous avons cherché un service pour gérer les adhésions.
@@ -72,7 +72,7 @@ Avantages :
 * Pas de commission, pour vous comme pour nous.
 * Permet de faire un don pendant l'[adhésion](https://www.helloasso.com/associations/hacf-communaute-francophone-autour-de-home-assista/adhesions/membres-actifs) ou alors [indifféremment](https://www.helloasso.com/associations/hacf-communaute-francophone-autour-de-home-assista/formulaires/1/widget).
 
-{{< button "Dons à l'**association** via HelloAsso" "https://dons.hacf.fr">}}
+{{< button "Dons à l'**association** via HelloAsso" "https://dons.hacf.fr" "fa-solid fa-euro-sign" >}}
 
 ## Liens affiliés
 Les liens affiliés vous permettent indirectement de nous reverser un pourcentage de votre panier sans incidence sur votre prix.
@@ -81,22 +81,24 @@ Les liens affiliés vous permettent indirectement de nous reverser un pourcentag
 
 Deux enseignes ont été retenues Amazon et AliExpress, elles ont chacune leurs avantages et inconvénients. Avec ces deux enseignes, nous balayons un large panel concernant vos attentes.
 
+{{< alert "Actuellement, seul le discord permet de générer les liens affiliés, mais il est possible en cliquant sur les liens ci-dessous d'atterir sur l'acceuil affilié des deux marchands." info >}} 
+
 ### Amazon
 Ce géant du e-commerce international propose des produits qui arriveront rapidement avec un service client très satisfaisant, mais en contrepartie le/les produits seront plus cher.
 
-####### BOUTON ALIEXPRESS AMAZON ################
+{{< button "Lien Affilié Amazon" "https://www.amazon.fr/?tag=hacf0d-21" "fa-brands fa-amazon">}}
 
 ### Aliexpress
 Ce géant du e-commerce des marchés asiatiques vous permettra d’acheter à des prix défiants toute concurrence, mais la livraison sera plus longue entre 15 et 60 jours. 
 Cette enseigne est très intéressante dans les projets DIY avec des prix de pièces électroniques très bas.
 
-{{< alert "Il existe la livraison en 10 jours ouvrés pour des prix un poil plus chers." info >}}
+{{< alert "Il existe la livraison en 10 jours ouvrés pour des prix a peine plus chers." info >}}
 
-####### BOUTON ALIEXPRESS AMAZON ################
+{{< button "Lien Affilié Aliexpress" "https://s.click.aliexpress.com/deep_link.htm?aff_short_key=_All9bw&dl_target_url=https%3A%2F%2Ffr.aliexpress.com%2F" "fa-brands fa-alipay">}}
 
 ## Les partenariats
 Nous espérons pouvoir mettre en place des partenariats avec des marques ou des enseignes pour présenter du matériels pouvant être intégré à Home Assistant.
 
 Si le matériel est donné à la communauté alors il sera mis dans une tombola pour les membres de l'association en fin d'année.
 
-{{< alert "Si vous êtes une enseigne ou un entreprise et êtes intéressé pour nous envoyer, en don ou en prêt, du matériel à tester, alors contactez-nous contact-association[[@]]hacf.fr." info >}}
+{{< alert "Si vous êtes une enseigne ou un entreprise et êtes intéressé pour nous envoyer, en don ou un prêt de matériel à tester, alors contactez-nous https://contact.hacf.fr." info >}}

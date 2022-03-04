@@ -3,7 +3,7 @@ title: "Présentation de HACF"
 date: 2021-11-19T23:28:02+01:00
 lastmod:
 draft: false
-layout : pages
+#layout : pages
 ---
 {{< quote "HACF est née de l'envie de **réunir** une commuanuté **Francophone** autour de Home Assistant" "**Les Fondateurs**" >}}
 
@@ -59,4 +59,4 @@ D’autres choses arriveront encore avec le temps et en fonction de vos suggesti
 
 Il y a encore beaucoup de choses à dire et/ou à faire sur le fonctionnement et nous comptons sur vous.
 
-{{< button "Formulaire de contct" "https://framaforms.org/contact-hacf-1630416579" >}}
+{{< button "Formulaire de contact" "https://framaforms.org/contact-hacf-1630416579" "fa-solid fa-envelope" >}}

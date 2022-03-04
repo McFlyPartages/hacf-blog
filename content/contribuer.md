@@ -40,4 +40,4 @@ N’hésitez pas à nous faire part de tout ce qui vous passe par la tête, vos 
 
 Nous essaierons de vous répondre le plus rapidement possible mais n’oubliez pas que nous sommes des bénévoles.
 
-{{< button "Contacter-nous" "Contactez-nous">}}
+{{< button "Contacter-nous" "https://contact.hacf.fr" "fa-solid fa-envelope">}}

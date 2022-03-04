@@ -13,7 +13,7 @@ Les personnes désirant adhérer doivent remplir un bulletin d’adhésion.
 ### Article 2 – Démission – Exclusion – Décès d’un membre.
 La démission doit être adressée au président de l'association par lettre recommandée. Elle n’a pas à être motivée par le membre démissionnaire.
 
-Comme indiqué à l’article « 8 » des statuts, l’exclusion d’un membre peut être prononcée par le bureau pour motif grave. Sont notamment réputés constituer des motifs graves :
+Comme indiqué à l’[article « 8 » des statuts](/asso-statuts/#article-8---radiations), l’exclusion d’un membre peut être prononcée par le bureau pour motif grave. Sont notamment réputés constituer des motifs graves :
 * la non-participation aux activités de l’association ;
 * une condamnation pénale pour crime et délit ;
 * toute action de nature à porter préjudice, directement ou indirectement, aux activités de l’association ou à sa réputation.
