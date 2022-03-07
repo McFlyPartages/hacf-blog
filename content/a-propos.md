@@ -3,7 +3,6 @@ title: "Présentation de HACF"
 date: 2021-11-19T23:28:02+01:00
 lastmod:
 draft: false
-#layout : pages
 ---
 {{< quote "HACF est née de l'envie de **réunir** une commuanuté **Francophone** autour de Home Assistant" "**Les Fondateurs**" >}}
 
