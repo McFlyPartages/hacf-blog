@@ -1,4 +1,4 @@
-name: Deploy Hugo to Github Page and SFTP serveur
+name: Build for verification
 
 # run when a commit is pushed to "source" branch
 on:
