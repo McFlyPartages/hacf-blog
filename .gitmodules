@@ -7,3 +7,6 @@
 [submodule "content/guide-dev"]
 	path = content/guide-dev
 	url = git@github.com:McFlyPartages/homeassistant-guide-du-developpeur.git
+[submodule "theme/hacf-theme"]
+	path = theme/hacf-theme
+	url = git@github.com:McFlyPartages/hacf-theme
