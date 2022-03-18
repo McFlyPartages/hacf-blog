@@ -67,7 +67,7 @@ Il existe deux types d’extensions :
 
 L'installation des extensions étant toujours la même, voici les différentes méthodes.
 
-{{< alert "Home assistant a simplifié la chose en mettant à disposition des développeurs un script générant un bouton (pour les BluePrint, Dépots, etc) qui, d'un simple clique, fait les actions à votre place. Cela nécessite simplement de saisir l'adresse de votre instance. ![Bouton Import Dépôt](img/repository_import.svg), ![Bouton Import BluePrint](img/blueprint_import.svg)""info" >}}
+{{< alert "Home assistant a simplifié la chose en mettant à disposition des développeurs un script générant un bouton (pour les BluePrint, Dépots, etc) qui, d'un simple clique, fait les actions à votre place. Cela nécessite simplement de saisir l'adresse de votre instance. ![Bouton Import Dépôt](img/repository_import.svg), ![Bouton Import BluePrint](img/blueprint_import.svg)" "info" >}}
 
 ## Extension Officielle.
 Pour les extensions officielles, il n'y a rien de compliqué.
