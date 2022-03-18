@@ -1,0 +1,59 @@
+baseURL = 'https://test.hacf.fr'
+languageCode = 'fr-fr'
+title = 'HACF'
+
+theme = 'hacf-theme'
+
+paginate = 12
+
+enableRobotsTXT = true
+enableEmoji = true
+
+enableInlineShortcodes = true
+enableGitInfo = true
+
+[params]
+  description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
+  keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
+  logo = "/images/logo-hacf-30px.webp"
+  article =  "/images/articles-vierge.webp"
+  contact = "contact@a@hacf.fr"
+  mainSections = ["articles", "news"] #https://gohugo.io/functions/where/#mainsections
+
+  # Background image du jumbotron
+  # background = '/images/site/background-dark.jpg'
+
+  enableTOC = true
+
+  # GitHub repo du site
+  gitRepo = "https://github.com/McFlyPartages/hacf-blog"
+  gitBranch = "testing"
+
+  gitRepoAwesome = "https://github.com/McFlyPartages/awesome-francophone-home-assistant"
+  gitBranchAwesome = "testing"
+
+  gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
+  gitBranchGuideDev = "testing"
+
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = ['lastmod', ':git', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  series = 'series'
+  author = 'authors'
+
+[imaging]
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+#resampleFilter = "box"
+# Default JPEG or WebP quality setting. Default is 75.
+quality = 100
+hint = "photo"
+disableDate = true
+disableLatLong = true
