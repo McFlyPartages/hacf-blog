@@ -45,7 +45,7 @@
     weight = 3
 
 [[main]]
-  name = "Articles / News / Guides"
+  name = "Articles / Nouvelles / Guides"
   identifier = "sujets"
   weight = 3
   [[main]]
@@ -97,7 +97,7 @@ url = "/protection-des-donnees"
 
 [[hacf]]
 name = "Email"
-url = "contact@a@hacf.fr"
+url = "https://contact.hacf.fr"
 pre = 'fa-envelope'
 weight = 1
 [[hacf]]

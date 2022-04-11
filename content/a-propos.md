@@ -117,4 +117,5 @@ D’autres choses arriveront encore avec le temps et en fonction de vos suggesti
 
 Il y a encore beaucoup de choses à dire et/ou à faire sur le fonctionnement et nous comptons sur vous.
 
-{{< button "Formulaire de contact" "https://framaforms.org/contact-hacf-1630416579" "fa-solid fa-envelope" >}}
+{{< buttoncontact >}}
+

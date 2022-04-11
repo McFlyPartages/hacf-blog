@@ -1,8 +1,4 @@
 ---
-title: ""
-
-
-
 title: "Release Note : Home Assistant Core Version 2021.9.X" # Titre article explicite
 date: 2022-03-03 # Date format YYYY-MM-DD
 lastmod:   # Date format YYYY-MM-DD   SI rine n'est rentré il prendra la modification GIT.
@@ -13,7 +9,12 @@ type: # Types existant : pages; news; awesome; guidedev;etc. Laisser vide pour l
 description: "Traduction de la mise à jour de Home Assistant en version 2021.9.X" # Description du sujet.
 # hero: /path/image.ext # Recherche un fichier hero.(webp;jpg;png;svg) a la racine du dossier OU si un hero est defini ici SINON il prend un hero par defaut.
 
-author: Pulpy
+# Simple ou multi auteurs, il faut remplir l'auteur principal.
+author: pulpy
+
+# Recherche par auteurs et si multi auteurs.
+authors:
+- pulpy
 
 #socialshare: true # Active l'option de partage
 article_ha: true # Ajoute les boutton du forum et les medias des deux communautés Home Assistant (Off et HACF)
@@ -46,13 +47,6 @@ keywords: # Mettre tous les mots definissant votre article, ils sont utilisés p
 
 ##################################################
 ##################################################
-
-###################
-# Non fonctionnel
-###################
-#author:
-#  name: Pulpy
-#  image: /images/author/pulpy.jpeg
 
 #menu:
 #  sidebar:

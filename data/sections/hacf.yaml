@@ -24,7 +24,7 @@ button:
 socialLinks:
 - name: Email
   icon: "fas fa-envelope"
-  url: "contact@a@hacf.fr"
+  url: "https://contact.hacf.fr"
 
 - name: Forum
   icon: "fab fa-discourse"

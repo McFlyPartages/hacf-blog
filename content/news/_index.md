@@ -1,5 +1,5 @@
 ---
-title : Liste des News
+title : Nouvelles
 #menu:
 #  sidebar:
 #    name: News
@@ -9,4 +9,4 @@ title : Liste des News
 
 ---
 
-Bienvenue dans la liste des sujets concernants les Release de & News de Home Assistant et de sa communauté Francophone.
+Bienvenue dans les nouvelles & les release concernant Home Assistant mais aussi votre communauté et son association "Communauté Francophone autour de Home Assistant".
