@@ -27,14 +27,14 @@ enableGitInfo = true
 
   # GitHub repo du site
   gitRepo = "https://github.com/McFlyPartages/hacf-blog"
-  gitBranch = "testing"
+  gitBranch = "main"
 
   gitRepoAwesome = "https://github.com/McFlyPartages/awesome-francophone-home-assistant"
-  gitBranchAwesome = "testing"
+  gitBranchAwesome = "main"
 
   gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
-  gitBranchGuideDev = "testing"
-
+  gitBranchGuideDev = "main"
+  
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
   expiryDate = ['expiryDate']
