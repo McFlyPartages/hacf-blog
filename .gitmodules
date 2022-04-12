@@ -1,0 +1,9 @@
+[submodule "themes/hacf-theme"]
+	path = themes/hacf-theme
+	url = git@github.com:McFlyPartages/hacf-theme.git
+[submodule "content/guide-dev"]
+	path = content/guide-dev
+	url = git@github.com:McFlyPartages/homeassistant-guide-du-developpeur.git
+[submodule "content/awesome"]
+	path = content/awesome
+	url = git@github.com:McFlyPartages/awesome-francophone-home-assistant.git
