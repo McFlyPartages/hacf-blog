@@ -4,42 +4,43 @@ name: Deploy Hugo to Github Page and SFTP serveur
 on:
   push:
     branches:
-    - main
+      - main  # Set a branch to deploy
+  pull_request:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-    # checkout to the commit that has been pushed
-    - uses: actions/checkout@v3
-      with:
-        submodules: recursive  # Fetch Hugo themes (true OR recursive)
-        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-    
-    # install Hugo
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-        extended: true
-    # Add postcss process https://github.com/peaceiris/actions-hugo#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli    
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '12.22.5'
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive  # Fetch the Docsy theme
+          fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.91.2'
+          extended: true
 
-    - run: npm ci
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
     
     # build website
-    - run: hugo --gc --environment production --minify --cleanDestinationDir --destination "public-integration/"
+      - run: hugo --gc --environment production --minify --cleanDestinationDir --destination "public-integration/"
       
     # Permet le deployement sur la branche main pour GitHub Page (plus utilisé)
     #- name: Deploy
@@ -64,20 +65,20 @@ jobs:
         
     #  uses: mxschmitt/action-tmate@v2
     # https://frigi.ch/en/2021/10/automatically-update-site-created-with-hugo/
-    - name: rsync deployments
-      uses: burnett01/rsync-deployments@5.1
-      with:
-        switches: -avzr --delete
-        path: public-integration/
-        remote_path: www/
-        remote_host: ${{ secrets.SFTP_HOST }}
-        remote_user: ${{ secrets.SFTP_USER }}
-        remote_key: ${{ secrets.SFTP_SSH_KEY }}
-        remote_port: ${{ secrets.SFTP_PORT }}
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.1
+        with:
+          switches: -avzr --delete
+          path: public-integration/
+          remote_path: www/
+          remote_host: ${{ secrets.SFTP_HOST }}
+          remote_user: ${{ secrets.SFTP_USER }}
+          remote_key: ${{ secrets.SFTP_SSH_KEY }}
+          remote_port: ${{ secrets.SFTP_PORT }}
 
 
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: dist-without-markdown
-        path: public-integration
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-without-markdown
+          path: public-integration
