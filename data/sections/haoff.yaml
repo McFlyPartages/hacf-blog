@@ -22,7 +22,7 @@ button:
 socialLinks:
 - name: Site
   url: "https://www.home-assistant.io/"
-  icon: "fas fa-blog"
+  icon: "fa fa-globe"
 
 - name: Forum
   url: "https://community.home-assistant.io/"

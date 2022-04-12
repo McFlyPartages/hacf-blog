@@ -23,8 +23,12 @@ button:
 
 socialLinks:
 - name: Email
-  icon: "fas fa-envelope"
+  icon: "far fa-envelope"
   url: "https://contact.hacf.fr"
+
+- name: Site
+  url: "https://www.hacf.fr/"
+  icon: "fa fa-globe"
 
 - name: Forum
   icon: "fab fa-discourse"
