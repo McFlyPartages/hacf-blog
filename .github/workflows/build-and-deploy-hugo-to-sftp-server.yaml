@@ -8,10 +8,10 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     # checkout to the commit that has been pushed
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         submodules: true  # Fetch Hugo themes (true OR recursive)
         fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -22,11 +22,27 @@ jobs:
       with:
         hugo-version: 'latest'
         extended: true
+    
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - run: npm ci
+
 
     # build website
     - name: Build
       run: hugo --gc --minify --cleanDestinationDir --destination "public-integration/"
-      
+
     # Permet le deployement sur la branche main pour GitHub Page (plus utilisé)
     #- name: Deploy
     #  uses: peaceiris/actions-gh-pages@v3
@@ -46,10 +62,10 @@ jobs:
 #        local_path: 'public/*'
 #        remote_path: '/www'
 
-        
-        
-    #  uses: mxschmitt/action-tmate@v2
-    # https://frigi.ch/en/2021/10/automatically-update-site-created-with-hugo/
+
+
+  #  uses: mxschmitt/action-tmate@v2
+  # https://frigi.ch/en/2021/10/automatically-update-site-created-with-hugo/
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.1
       with:
