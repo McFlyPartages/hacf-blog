@@ -22,7 +22,7 @@ jobs:
       with:
         hugo-version: 'latest'
         extended: true
-        
+    # Add postcss process https://github.com/peaceiris/actions-hugo#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli    
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
@@ -39,7 +39,7 @@ jobs:
     - run: npm ci
     
     # build website
-      run: hugo --gc --minify --cleanDestinationDir --destination "public-integration/"
+    - run: hugo --gc --minify --cleanDestinationDir --destination "public-integration/"
       
     # Permet le deployement sur la branche main pour GitHub Page (plus utilisé)
     #- name: Deploy
