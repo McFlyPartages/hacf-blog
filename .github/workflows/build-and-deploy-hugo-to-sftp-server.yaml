@@ -41,7 +41,7 @@ jobs:
 
     # build website
     - name: Build
-      run: hugo --minify
+      run: hugo  --gc --minify --environment "production" --cleanDestinationDir --destination "public-integration/"
 
     # Permet le deployement sur la branche main pour GitHub Page (plus utilisé)
     #- name: Deploy
