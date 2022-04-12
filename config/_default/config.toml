@@ -12,6 +12,9 @@ enableEmoji = true
 enableInlineShortcodes = true
 enableGitInfo = true
 
+[build]
+  writeStats = true
+
 [params]
   description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
@@ -19,7 +22,7 @@ enableGitInfo = true
   article =  "/images/articles-vierge.webp"
   contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
   mainSections = ["articles", "news"] #https://gohugo.io/functions/where/#mainsections
-
+  customcss = true
   # Background image du jumbotron
   # background = '/images/site/background-dark.jpg'
 
@@ -73,3 +76,5 @@ disableLatLong = true
     disable = true
   [privacy.youtube]
     disable = true
+
+## Permet de supprimer les classe s inutilisées dans le CSS et ainsi reduire sa taille. https://gohugo.io/hugo-pipes/postprocess/

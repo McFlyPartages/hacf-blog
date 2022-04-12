@@ -64,6 +64,9 @@ keywords: # Mettre tous les mots definissant votre article, ils sont utilisés p
 #    parent: news-home-assistant
 #    weight: 10
 ---
+
+{{< haautoconfig bp "https://essaiedeboutonhomeassitant.fr" >}}
+
 Les add-ons permettent d’ajouter des fonctions, services ou autres à votre Home Assistant. Des services très connus et reconnus (comme Node-Red, Grafana, InfluxDB, DuckDNS, etc.) sont déjà presque configuré pour communiquer simplement avec votre système domotique.
 
 Il existe deux types d’extensions :
