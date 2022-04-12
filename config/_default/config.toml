@@ -12,9 +12,6 @@ enableEmoji = true
 enableInlineShortcodes = true
 enableGitInfo = true
 
-[build]
-  writeStats = true
-
 [params]
   description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
@@ -78,3 +75,5 @@ disableLatLong = true
     disable = true
 
 ## Permet de supprimer les classe s inutilisées dans le CSS et ainsi reduire sa taille. https://gohugo.io/hugo-pipes/postprocess/
+[build]
+  writeStats = true
