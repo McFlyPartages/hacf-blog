@@ -1,3 +1,20 @@
+/*MENU SANS JS*/
+#navbar-toggle-cbox {
+    display:none
+  }
+#navbar-toggle-cbox:checked ~ .collapse {
+      display: block;
+  }
+.dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+
+label[for=navbar-toggle-cbox] {
+    cursor: pointer;
+  }
+
+/*Time line*/
+
 .main-timeline {
     position: relative
 }
